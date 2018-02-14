@@ -2,17 +2,11 @@ import React, { Component } from "react";
 import {
   Button,
   Container,
-  Divider,
-  Grid,
-  Header,
   Icon,
-  Image,
-  List,
   Menu,
   Responsive,
   Segment,
-  Sidebar,
-  Visibility
+  Sidebar
 } from "semantic-ui-react";
 import HomepageHeading from "./HomepageHeading";
 
@@ -74,7 +68,7 @@ class MobileContainer extends Component {
                   </Menu.Item>
                 </Menu>
               </Container>
-              {/* <HomepageHeading mobile /> */}
+              <HomepageHeading mobile />
             </Segment>
 
             {children}
