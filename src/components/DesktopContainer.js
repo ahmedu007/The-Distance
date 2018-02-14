@@ -23,7 +23,7 @@ class DesktopContainer extends Component {
   showFixedMenu = () => this.setState({ fixed: true });
 
   render() {
-    const { children } = this.props;
+    const { children } = this.props.text;
     const { fixed } = this.state;
 
     return (
@@ -36,7 +36,7 @@ class DesktopContainer extends Component {
           <Segment
             inverted
             textAlign="center"
-            style={{ minHeight: 700, padding: "1em 0em" }}
+            style={{ minHeight: 300, padding: "1em 0em" }}
             vertical
           >
             <Menu
@@ -47,7 +47,7 @@ class DesktopContainer extends Component {
               size="large"
             >
               <Container>
-                <Menu.Item as="a" active>
+                <Menu.Item as="a" active href="/">
                   Home
                 </Menu.Item>
                 <Menu.Item as="a">Work</Menu.Item>
@@ -68,10 +68,9 @@ class DesktopContainer extends Component {
                 </Menu.Item>
               </Container>
             </Menu>
-            <HomepageHeading />
+            <HomepageHeading name={this.props.text.text.text} />
           </Segment>
         </Visibility>
-
         {children}
       </Responsive>
     );

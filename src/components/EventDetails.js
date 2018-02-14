@@ -16,12 +16,11 @@ import {
 } from "semantic-ui-react";
 import MobileContainer from "./MobileContainer";
 import DesktopContainer from "./DesktopContainer";
-import HomepageHeading from "./HomepageHeading";
 
-const ResponsiveContainer = ({ children }) => (
+const ResponsiveContainer = props => (
   <div>
-    <DesktopContainer>{children}</DesktopContainer>
-    <MobileContainer>{children}</MobileContainer>
+    <DesktopContainer text={props} />
+    <MobileContainer text={props} />
   </div>
 );
 
@@ -30,7 +29,11 @@ class EventDetails extends Component {
     super(props);
     this.state = {
       event: {
-        name: ""
+        name: "",
+        description: {
+          text: ""
+        },
+        url: ""
       }
     };
   }
@@ -52,8 +55,37 @@ class EventDetails extends Component {
 
   render() {
     return (
-      <ResponsiveContainer>
-        <HomepageHeading />
+      <ResponsiveContainer text={this.state.event.name}>
+        <Segment style={{ padding: "8em 0em" }} vertical>
+          <Grid container stackable verticalAlign="middle">
+            <Grid.Row>
+              <Grid.Column floated="left" width={6}>
+                <Image
+                  bordered
+                  rounded
+                  size="large"
+                  src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F39805153%2F68193446877%2F1%2Foriginal.jpg?s=8515a99ed64f057181ff863b0198b4f8"
+                />
+              </Grid.Column>
+              <Grid.Column width={8}>
+                <Header as="h3" style={{ fontSize: "2em" }}>
+                  Event Description:
+                </Header>
+                <p style={{ fontSize: "1.2em" }}>
+                  {this.state.event.description.text}
+                </p>
+              </Grid.Column>
+            </Grid.Row>
+            <Grid.Row>
+              <Grid.Column textAlign="center">
+                <Button size="huge" href={this.state.event.url}>
+                  Register Now!
+                </Button>
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </Segment>
+
         <Segment style={{ padding: "0em" }} vertical>
           <Grid celled="internally" columns="equal" stackable>
             <Grid.Row textAlign="center">
@@ -67,10 +99,13 @@ class EventDetails extends Component {
               </Grid.Column>
               <Grid.Column style={{ paddingBottom: "5em", paddingTop: "5em" }}>
                 <Header as="h3" style={{ fontSize: "2em" }}>
-                  "I shouldn't have gone with their competitor."
+                  "Event Details:"
                 </Header>
                 <p style={{ fontSize: "1.33em" }}>
-                  <Image avatar src="/assets/images/avatar/large/nan.jpg" />
+                  <Image
+                    avatar
+                    src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F39805153%2F68193446877%2F1%2Foriginal.jpg?s=8515a99ed64f057181ff863b0198b4f8"
+                  />
                   <b>Nan</b> Chief Fun Officer Acme Toys
                 </p>
               </Grid.Column>
