@@ -1,12 +1,5 @@
 import React, { Component } from "react";
-import {
-  Button,
-  Container,
-  Menu,
-  Responsive,
-  Segment,
-  Visibility
-} from "semantic-ui-react";
+import { Menu, Responsive, Segment, Visibility } from "semantic-ui-react";
 import HomepageHeading from "./HomepageHeading";
 import Navbar from "./Navbar";
 
