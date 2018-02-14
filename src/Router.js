@@ -43,6 +43,7 @@ class Router extends React.Component {
               <App
                 events={this.state.events}
                 getEvents={this.getEvents.bind(this)}
+                pageCount={this.state.pagination.page_count}
                 {...props}
               />
             )}

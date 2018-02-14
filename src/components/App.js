@@ -23,8 +23,8 @@ class App extends React.Component {
       >
         <Pagination
           defaultActivePage={1}
-          totalPages={100}
           onPageChange={this.handleChange}
+          totalPages={this.props.pageCount || 20}
         />
         <br />
         <br />
