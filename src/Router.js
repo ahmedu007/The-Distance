@@ -15,7 +15,6 @@ class Router extends React.Component {
   }
 
   getEvents(page = 1) {
-    console.log(page);
     fetch(
       `https://www.eventbriteapi.com/v3/events/search/?token=VBUSKKCQ2VTXKPOP34PX&page=${page}`
     )
