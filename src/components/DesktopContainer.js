@@ -8,6 +8,7 @@ import {
   Visibility
 } from "semantic-ui-react";
 import HomepageHeading from "./HomepageHeading";
+import Navbar from "./Navbar";
 
 class DesktopContainer extends Component {
   state = {};
@@ -39,27 +40,7 @@ class DesktopContainer extends Component {
               secondary={!fixed}
               size="large"
             >
-              <Container>
-                <Menu.Item as="a" active href="/">
-                  Home
-                </Menu.Item>
-                <Menu.Item as="a">Work</Menu.Item>
-                <Menu.Item as="a">Company</Menu.Item>
-                <Menu.Item as="a">Careers</Menu.Item>
-                <Menu.Item position="right">
-                  <Button as="a" inverted={!fixed}>
-                    Log in
-                  </Button>
-                  <Button
-                    as="a"
-                    inverted={!fixed}
-                    primary={fixed}
-                    style={{ marginLeft: "0.5em" }}
-                  >
-                    Sign Up
-                  </Button>
-                </Menu.Item>
-              </Container>
+              <Navbar fixed={fixed} />
             </Menu>
             <HomepageHeading name={this.props.text.text.text} />
           </Segment>

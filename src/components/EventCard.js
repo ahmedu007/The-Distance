@@ -14,7 +14,14 @@ const EventCard = props => {
     >
       <Link to={`/events/${props.event.id}`}>
         <Image src={props.event.logo.url} style={{ minHeight: "145px" }} />
-        <Card.Content style={{ alignItems: "justify" }}>
+        <Card.Content
+          style={{
+            alignItems: "justify",
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+            whiteSpace: "nowrap"
+          }}
+        >
           <Card.Header>{props.event.name.text}</Card.Header>
           <br />
           <Card.Meta>
