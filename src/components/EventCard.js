@@ -13,7 +13,15 @@ const EventCard = props => {
       id="img-zoom-in"
     >
       <Link to={`/events/${props.event.id}`}>
-        <Image src={props.event.logo.url} style={{ minHeight: "145px" }} />
+        <Image
+          src={
+            props.event.logo !== null
+              ? props.event.logo.url
+              : `http://renovatelocal.com.au/wp-content/themes/renovate-child/images/soon.jpg`
+          }
+          style={{ minHeight: "145px" }}
+          alt="thumbnail"
+        />
         <Card.Content
           style={{
             alignItems: "justify",

@@ -1,18 +1,39 @@
 import React from "react";
 import "./App.css";
 import EventCard from "./EventCard";
-import { Container } from "semantic-ui-react";
+import { Container, Pagination } from "semantic-ui-react";
 
-const App = props => {
-  return (
-    <Container
-      className="container"
-      textAlign="center"
-      style={{ padding: "5%" }}
-    >
-      {props.events.map((event, i) => <EventCard event={event} key={i} />)}
-    </Container>
-  );
-};
+class App extends React.Component {
+  constructor() {
+    super();
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(event, { activePage }) {
+    event.preventDefault();
+    this.props.getEvents(activePage);
+  }
+
+  render() {
+    return (
+      <Container
+        className="container"
+        textAlign="center"
+        style={{ padding: "5%" }}
+      >
+        <Pagination
+          defaultActivePage={1}
+          totalPages={100}
+          onPageChange={this.handleChange}
+        />
+        <br />
+        <br />
+        {this.props.events.map((event, i) => (
+          <EventCard event={event} key={i} />
+        ))}
+      </Container>
+    );
+  }
+}
 
 export default App;

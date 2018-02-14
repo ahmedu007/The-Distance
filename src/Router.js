@@ -11,19 +11,21 @@ class Router extends React.Component {
       events: [],
       pagination: {}
     };
+    this.getEvents = this.getEvents.bind(this);
   }
 
-  getEvents() {
+  getEvents(page = 1) {
+    console.log(page);
     fetch(
-      "https://www.eventbriteapi.com/v3/events/search/?token=VBUSKKCQ2VTXKPOP34PX&page=1"
+      `https://www.eventbriteapi.com/v3/events/search/?token=VBUSKKCQ2VTXKPOP34PX&page=${page}`
     )
       .then(res => res.json())
-      .then(res =>
-        this.setState({
+      .then(res => {
+        return this.setState({
           events: res.events,
           pagination: res.pagination
-        })
-      )
+        });
+      })
       .catch(err => console.error(err));
   }
 
@@ -38,7 +40,13 @@ class Router extends React.Component {
           <Route
             exact
             path="/"
-            render={props => <App events={this.state.events} {...props} />}
+            render={props => (
+              <App
+                events={this.state.events}
+                getEvents={this.getEvents.bind(this)}
+                {...props}
+              />
+            )}
           />
           <Route exact path="/test" component={Test} />
           <Route path={`/events/:id`} component={EventDetails} />
