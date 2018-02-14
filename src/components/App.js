@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "./App.css";
 import EventCard from "./EventCard";
 import { Container } from "semantic-ui-react";

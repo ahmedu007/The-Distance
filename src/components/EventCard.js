@@ -1,8 +1,7 @@
 import React from "react";
 import { Card, Icon, Image } from "semantic-ui-react";
 import * as moment from "moment";
-import { Link, Route } from "react-router-dom";
-import EventDetails from "./EventDetails";
+import { Link } from "react-router-dom";
 
 const EventCard = props => (
   <Card raised centered>
