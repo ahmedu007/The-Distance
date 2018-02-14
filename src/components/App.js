@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import logo from "../logo.svg";
 import "./App.css";
+import EventCard from "./EventCard";
+import { Container } from "semantic-ui-react";
 
 class App extends Component {
   constructor(props) {
@@ -25,19 +26,17 @@ class App extends Component {
       .catch(err => console.error(err));
   }
 
+  componentDidMount() {
+    this.getEvents();
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <button onClick={this.getEvents.bind(this)}>Get events</button>
-        <ul>{this.state.events.map(event => <li>{event.name.text}</li>)}</ul>
-      </div>
+      <Container className="container" style={{ padding: "5%" }}>
+        {this.state.events.map((event, i) => (
+          <EventCard event={event} key={i} />
+        ))}
+      </Container>
     );
   }
 }
