@@ -33,7 +33,15 @@ class EventDetails extends Component {
         description: {
           text: ""
         },
-        url: ""
+        url: "",
+        logo: {
+          original: {
+            url: ""
+          }
+        },
+        start: {
+          timezone: ""
+        }
       }
     };
   }
@@ -54,6 +62,7 @@ class EventDetails extends Component {
   }
 
   render() {
+    const location = this.state.event.start.timezone.split("/");
     return (
       <ResponsiveContainer text={this.state.event.name}>
         <Segment style={{ padding: "8em 0em" }} vertical>
@@ -64,7 +73,7 @@ class EventDetails extends Component {
                   bordered
                   rounded
                   size="large"
-                  src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F39805153%2F68193446877%2F1%2Foriginal.jpg?s=8515a99ed64f057181ff863b0198b4f8"
+                  src={this.state.event.logo.original.url}
                 />
               </Grid.Column>
               <Grid.Column width={8}>
@@ -91,22 +100,22 @@ class EventDetails extends Component {
             <Grid.Row textAlign="center">
               <Grid.Column style={{ paddingBottom: "5em", paddingTop: "5em" }}>
                 <Header as="h3" style={{ fontSize: "2em" }}>
-                  "What a Company"
-                </Header>
-                <p style={{ fontSize: "1.33em" }}>
-                  That is what they all say about us
-                </p>
-              </Grid.Column>
-              <Grid.Column style={{ paddingBottom: "5em", paddingTop: "5em" }}>
-                <Header as="h3" style={{ fontSize: "2em" }}>
-                  "Event Details:"
+                  Location Details:
                 </Header>
                 <p style={{ fontSize: "1.33em" }}>
                   <Image
                     avatar
-                    src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F39805153%2F68193446877%2F1%2Foriginal.jpg?s=8515a99ed64f057181ff863b0198b4f8"
+                    src="http://www.ocsa.co.za/wp-content/uploads/2017/08/google-location-icon-location.png"
                   />
-                  <b>Nan</b> Chief Fun Officer Acme Toys
+                  <em>{location[1]}</em>, <b>{location[0]}</b>
+                </p>
+              </Grid.Column>
+              <Grid.Column style={{ paddingBottom: "5em", paddingTop: "5em" }}>
+                <Header as="h3" style={{ fontSize: "2em" }}>
+                  Tickets Range:
+                </Header>
+                <p style={{ fontSize: "1.33em" }}>
+                  {this.state.event.is_free ? "Free" : "$ N/A"}
                 </p>
               </Grid.Column>
             </Grid.Row>
