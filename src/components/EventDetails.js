@@ -68,7 +68,11 @@ class EventDetails extends Component {
                   bordered
                   rounded
                   size="large"
-                  src={this.state.event.logo.original.url}
+                  src={
+                    this.state.event.logo !== null
+                      ? this.state.event.logo.original.url
+                      : `https://www.seeklogo.net/wp-content/themes/seeklogo-2017/images/not-available.jpg`
+                  }
                 />
               </Grid.Column>
               <Grid.Column width={8}>
