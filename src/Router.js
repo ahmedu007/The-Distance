@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import App from "./components/App";
-import Test from "./components/Test";
 import EventDetails from "./components/EventDetails";
 
 class Router extends React.Component {
@@ -48,7 +47,6 @@ class Router extends React.Component {
               />
             )}
           />
-          <Route exact path="/test" component={Test} />
           <Route path={`/events/:id`} component={EventDetails} />
         </Switch>
       </BrowserRouter>
