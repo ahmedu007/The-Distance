@@ -1,9 +1,9 @@
 import React from "react";
-import { Card, Icon, Image, Header } from "semantic-ui-react";
+import { Card, Icon, Image } from "semantic-ui-react";
 import * as moment from "moment";
 
 const EventCard = props => (
-  <Card raised>
+  <Card raised centered>
     <Image src={props.event.logo.url} />
     <Card.Content>
       <Card.Header>{props.event.name.text}</Card.Header>
@@ -11,7 +11,7 @@ const EventCard = props => (
       <Card.Meta style={{ textAlign: "left" }}>
         <span className="date">
           <Icon name="calendar" />
-          <p>{moment(props.event.start.local).format("DD/MM")}</p>
+          {moment(props.event.start.local).format("DD/MM/YYYY")}
         </span>
       </Card.Meta>
       <Card.Description>{}</Card.Description>

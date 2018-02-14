@@ -15,7 +15,6 @@ import {
   Sidebar,
   Visibility
 } from "semantic-ui-react";
-import EventCard from "./EventCard";
 
 const HomepageHeading = ({ mobile }) => (
   <Container text>

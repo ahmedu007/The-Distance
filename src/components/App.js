@@ -32,7 +32,11 @@ class App extends Component {
 
   render() {
     return (
-      <Container className="container" style={{ padding: "5%" }}>
+      <Container
+        className="container"
+        textAlign="center"
+        style={{ padding: "5%" }}
+      >
         {this.state.events.map((event, i) => (
           <EventCard event={event} key={i} />
         ))}
