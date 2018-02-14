@@ -1,19 +1,5 @@
 import React from "react";
-import {
-  Button,
-  Container,
-  Divider,
-  Grid,
-  Header,
-  Icon,
-  Image,
-  List,
-  Menu,
-  Responsive,
-  Segment,
-  Sidebar,
-  Visibility
-} from "semantic-ui-react";
+import { Button, Container, Header, Icon } from "semantic-ui-react";
 import "./HomepageHeading.css";
 
 const HomepageHeading = props => (
@@ -23,7 +9,7 @@ const HomepageHeading = props => (
       content={props.name}
       inverted
       style={{
-        fontSize: props.mobile ? "2em" : "4em",
+        fontSize: props.mobile ? "2em" : "3em",
         fontWeight: "normal",
         marginBottom: "0.5em",
         marginTop: props.mobile ? "1.5em" : "2em"
