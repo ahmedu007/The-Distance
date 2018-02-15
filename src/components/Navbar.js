@@ -54,18 +54,19 @@ class Navbar extends Component {
                 Sign Up
               </Button>
             </Menu.Item>
-          ) : null}
-          <Menu.Item position="right">
-            <form onSubmit={this.handleSubmit}>
-              <Input
-                icon="copy"
-                iconPosition="left"
-                placeholder="Go to page..."
-                onChange={this.handleChange}
-                value={this.state.value}
-              />
-            </form>
-          </Menu.Item>
+          ) : (
+            <Menu.Item position="right">
+              <form onSubmit={this.handleSubmit}>
+                <Input
+                  icon="copy"
+                  iconPosition="left"
+                  placeholder="Go to page..."
+                  onChange={this.handleChange}
+                  value={this.state.value}
+                />
+              </form>
+            </Menu.Item>
+          )}
         </Container>
       </Menu>
     );
