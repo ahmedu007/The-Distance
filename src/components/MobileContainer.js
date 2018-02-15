@@ -17,7 +17,7 @@ class MobileContainer extends Component {
     this.setState({ sidebarOpened: !this.state.sidebarOpened });
 
   render() {
-    const { children } = this.props;
+    const { children } = this.props.text;
     const { sidebarOpened } = this.state;
 
     return (
@@ -68,7 +68,7 @@ class MobileContainer extends Component {
                   </Menu.Item>
                 </Menu>
               </Container>
-              <HomepageHeading mobile />
+              <HomepageHeading mobile name={this.props.text.text.text} />
             </Segment>
 
             {children}

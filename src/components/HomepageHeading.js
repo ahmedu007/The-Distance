@@ -15,11 +15,6 @@ const HomepageHeading = props => (
         marginTop: props.mobile ? "1.5em" : "2em"
       }}
     />
-
-    <Button primary size="huge">
-      Get Started
-      <Icon name="right arrow" />
-    </Button>
   </Container>
 );
 
