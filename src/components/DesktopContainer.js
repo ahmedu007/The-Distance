@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Menu, Responsive, Segment, Visibility } from "semantic-ui-react";
+import { Responsive, Segment, Visibility } from "semantic-ui-react";
 import HomepageHeading from "./HomepageHeading";
 import Navbar from "./Navbar";
 
