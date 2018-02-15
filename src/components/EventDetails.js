@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {
+  Icon,
   Button,
   Container,
   Grid,
@@ -126,6 +127,7 @@ class EventDetails extends Component {
                   Tickets Range:
                 </Header>
                 <p style={{ fontSize: "1.33em" }}>
+                  <Icon name="ticket" />
                   {this.state.event.is_free ? "Free" : "$ N/A"}
                 </p>
               </Grid.Column>
@@ -148,6 +150,7 @@ class EventDetails extends Component {
                   Online Event:
                 </Header>
                 <p style={{ fontSize: "1.33em" }}>
+                  <Icon name="world" />
                   {this.state.event.online_event ? "Yes" : "No"}
                 </p>
               </Grid.Column>
