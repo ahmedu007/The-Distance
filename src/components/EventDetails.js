@@ -10,6 +10,7 @@ import {
 } from "semantic-ui-react";
 import MobileContainer from "./MobileContainer";
 import DesktopContainer from "./DesktopContainer";
+import * as moment from "moment";
 
 const ResponsiveContainer = props => (
   <div>
@@ -101,6 +102,29 @@ class EventDetails extends Component {
             <Grid.Row textAlign="center">
               <Grid.Column style={{ paddingBottom: "5em", paddingTop: "5em" }}>
                 <Header as="h3" style={{ fontSize: "2em" }}>
+                  Date & Time:
+                </Header>
+                <p style={{ fontSize: "1.33em" }}>
+                  {moment(this.state.event.start.local).format(
+                    "dddd, Do MMMM YYYY"
+                  )}
+                </p>
+                <p style={{ fontSize: "1.33em" }}>
+                  {moment(this.state.event.start.local).format("HH:mm:ss ")}
+                </p>
+              </Grid.Column>
+              <Grid.Column style={{ paddingBottom: "5em", paddingTop: "5em" }}>
+                <Header as="h3" style={{ fontSize: "2em" }}>
+                  Tickets Range:
+                </Header>
+                <p style={{ fontSize: "1.33em" }}>
+                  {this.state.event.is_free ? "Free" : "$ N/A"}
+                </p>
+              </Grid.Column>
+            </Grid.Row>
+            <Grid.Row textAlign="center">
+              <Grid.Column style={{ paddingBottom: "5em", paddingTop: "5em" }}>
+                <Header as="h3" style={{ fontSize: "2em" }}>
                   Location Details:
                 </Header>
                 <p style={{ fontSize: "1.33em" }}>
@@ -113,10 +137,10 @@ class EventDetails extends Component {
               </Grid.Column>
               <Grid.Column style={{ paddingBottom: "5em", paddingTop: "5em" }}>
                 <Header as="h3" style={{ fontSize: "2em" }}>
-                  Tickets Range:
+                  Online Event:
                 </Header>
                 <p style={{ fontSize: "1.33em" }}>
-                  {this.state.event.is_free ? "Free" : "$ N/A"}
+                  {this.state.event.online_event ? "Yes" : "No"}
                 </p>
               </Grid.Column>
             </Grid.Row>
