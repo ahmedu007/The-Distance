@@ -47,7 +47,12 @@ class Router extends React.Component {
               />
             )}
           />
-          <Route path={`/events/:id`} component={EventDetails} />
+          <Route
+            path={`/events/:id`}
+            render={props => (
+              <EventDetails events={this.state.events} {...props} />
+            )}
+          />
         </Switch>
       </BrowserRouter>
     );

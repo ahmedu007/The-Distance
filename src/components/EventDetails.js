@@ -53,6 +53,14 @@ class EventDetails extends Component {
   }
 
   componentDidMount() {
+    if (this.props.event) {
+      return this.props.event.map(event => {
+        if (event.id === this.props.match.params.id)
+          this.setState({
+            event
+          });
+      });
+    }
     this.getEventDetails();
   }
 
