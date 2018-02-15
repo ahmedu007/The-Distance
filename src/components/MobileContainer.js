@@ -37,8 +37,12 @@ class MobileContainer extends Component {
               Home
             </Menu.Item>
 
-            <Menu.Item as="a" primary>
+            <Menu.Item as="a" href={this.props.text.signUp}>
               Sign Up
+            </Menu.Item>
+
+            <Menu.Item as="a" onClick={this.handleToggle}>
+              Back
             </Menu.Item>
           </Sidebar>
 
