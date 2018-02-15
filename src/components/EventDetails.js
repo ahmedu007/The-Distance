@@ -12,6 +12,7 @@ import {
 import MobileContainer from "./MobileContainer";
 import DesktopContainer from "./DesktopContainer";
 import * as moment from "moment";
+import locationImg from "./images/google-location-icon-location.png";
 
 const ResponsiveContainer = props => (
   <div>
@@ -138,10 +139,7 @@ class EventDetails extends Component {
                   Location Details:
                 </Header>
                 <p style={{ fontSize: "1.33em" }}>
-                  <Image
-                    avatar
-                    src="http://www.ocsa.co.za/wp-content/uploads/2017/08/google-location-icon-location.png"
-                  />
+                  <Image avatar src={locationImg} />
                   <em>{location[1]}</em>, <b>{location[0]}</b>
                 </p>
               </Grid.Column>
