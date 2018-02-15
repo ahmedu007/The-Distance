@@ -32,16 +32,18 @@ const EventCard = props => {
         >
           <Card.Header>{props.event.name.text}</Card.Header>
           <br />
-          <Card.Meta>
-            <span className="date" style={{ fontSize: "14px" }}>
-              <Icon name="calendar" />
-              {moment(props.event.start.local).format("DD/MM/YYYY")}
-            </span>
-          </Card.Meta>
-          <Card.Description style={{ verticalAlign: "bottom" }}>
-            <Icon name="location arrow" />
-            {location[1]}
-          </Card.Description>
+          <span style={{ position: "absolute", bottom: 0, left: 0 }}>
+            <Card.Meta>
+              <span className="date" style={{ fontSize: "14px" }}>
+                <Icon name="calendar" />
+                {moment(props.event.start.local).format("DD/MM/YYYY")}
+              </span>
+            </Card.Meta>
+            <Card.Description>
+              <Icon name="location arrow" />
+              {location[1]}
+            </Card.Description>
+          </span>
         </Card.Content>
       </NavLink>
     </Card>
