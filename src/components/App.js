@@ -17,6 +17,10 @@ class App extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.setState({ activePage: this.props.activePage });
+  }
+
   handleChange(event, { activePage }) {
     event.preventDefault();
     this.setState({
@@ -47,13 +51,12 @@ class App extends React.Component {
     const { activePage } = this.props;
     return (
       <div>
-        <Navbar fixed={true} button={false} />
+        <Navbar fixed={true} button={false} getEvents={this.props.getEvents} />
         <br />
         <br />
         <br />
         <Container style={{ textAlign: "center" }}>
           <Pagination
-            defaultActivePage={1}
             firstItem={null}
             lastItem={null}
             activePage={activePage}

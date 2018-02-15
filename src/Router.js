@@ -8,8 +8,9 @@ class Router extends React.Component {
     super(props);
     this.state = {
       events: [],
-      pagination: {},
-      loading: true
+      activePage: 1,
+      loading: true,
+      pagination: {}
     };
     this.getEvents = this.getEvents.bind(this);
   }
@@ -26,6 +27,7 @@ class Router extends React.Component {
         return this.setState({
           events: res.events,
           pagination: res.pagination,
+          activePage: page,
           loading: false
         });
       })
@@ -49,6 +51,7 @@ class Router extends React.Component {
                 getEvents={this.getEvents}
                 pageCount={this.state.pagination.page_count}
                 loading={this.state.loading}
+                activePage={this.state.activePage}
                 {...props}
               />
             )}

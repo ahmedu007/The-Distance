@@ -1,11 +1,32 @@
 import React, { Component } from "react";
-import { Container, Menu, Button, Icon } from "semantic-ui-react";
+import { Container, Menu, Button, Icon, Input } from "semantic-ui-react";
 
 class Navbar extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      value: ""
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
+
+  handleChange(event) {
+    event.preventDefault();
+    this.setState({ value: event.target.value });
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    const pageNum = this.state.value.match(/^\d+$/);
+    if (pageNum !== null) {
+      this.props.getEvents(+pageNum[0]);
+      this.setState({
+        value: ""
+      });
+    }
+  }
+
   render() {
     const { fixed } = this.props;
     return (
@@ -34,6 +55,17 @@ class Navbar extends Component {
               </Button>
             </Menu.Item>
           ) : null}
+          <Menu.Item position="right">
+            <form onSubmit={this.handleSubmit}>
+              <Input
+                icon="copy"
+                iconPosition="left"
+                placeholder="Go to page..."
+                onChange={this.handleChange}
+                value={this.state.value}
+              />
+            </form>
+          </Menu.Item>
         </Container>
       </Menu>
     );
