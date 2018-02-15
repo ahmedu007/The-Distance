@@ -26,15 +26,7 @@ class DesktopContainer extends Component {
             style={{ minHeight: 300, padding: "1em 0em" }}
             vertical
           >
-            <Menu
-              fixed={fixed ? "top" : null}
-              inverted={!fixed}
-              pointing={!fixed}
-              secondary={!fixed}
-              size="large"
-            >
-              <Navbar fixed={fixed} />
-            </Menu>
+            <Navbar fixed={fixed} button={true} />
             <HomepageHeading name={this.props.text.text.text} />
           </Segment>
         </Visibility>
