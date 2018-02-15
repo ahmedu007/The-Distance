@@ -55,6 +55,7 @@ class App extends React.Component {
         <br />
         <br />
         <br />
+        <br />
         <Container style={{ textAlign: "center" }}>
           <Pagination
             firstItem={null}
