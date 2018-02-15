@@ -10,7 +10,7 @@ class DesktopContainer extends Component {
   showFixedMenu = () => this.setState({ fixed: true });
 
   render() {
-    const { children } = this.props.text;
+    const { children, signUp } = this.props.text;
     const { fixed } = this.state;
 
     return (
@@ -26,7 +26,7 @@ class DesktopContainer extends Component {
             style={{ minHeight: 300, padding: "1em 0em" }}
             vertical
           >
-            <Navbar fixed={fixed} button={true} />
+            <Navbar fixed={fixed} button={true} signUp={signUp} />
             <HomepageHeading name={this.props.text.text.text} />
           </Segment>
         </Visibility>

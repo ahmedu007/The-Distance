@@ -27,6 +27,7 @@ class Navbar extends Component {
                 inverted={!fixed}
                 primary={fixed}
                 style={{ marginLeft: "0.5em" }}
+                href={this.props.signUp}
               >
                 <Icon name="signup" />
                 Sign Up
