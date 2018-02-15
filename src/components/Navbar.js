@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Menu, Button } from "semantic-ui-react";
+import { Container, Menu, Button, Icon } from "semantic-ui-react";
 
 class Navbar extends Component {
   constructor(props) {
@@ -17,15 +17,13 @@ class Navbar extends Component {
         <Menu.Item as="a">Company</Menu.Item>
         <Menu.Item as="a">Careers</Menu.Item>
         <Menu.Item position="right">
-          <Button as="a" inverted={!fixed}>
-            Log in
-          </Button>
           <Button
             as="a"
             inverted={!fixed}
             primary={fixed}
             style={{ marginLeft: "0.5em" }}
           >
+            <Icon name="signup" />
             Sign Up
           </Button>
         </Menu.Item>

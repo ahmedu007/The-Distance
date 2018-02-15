@@ -59,7 +59,10 @@ class EventDetails extends Component {
   render() {
     const location = this.state.event.start.timezone.split("/");
     return (
-      <ResponsiveContainer text={this.state.event.name}>
+      <ResponsiveContainer
+        text={this.state.event.name}
+        signUp={this.state.event.url}
+      >
         <Segment style={{ padding: "8em 0em" }} vertical>
           <Grid container stackable verticalAlign="middle">
             <Grid.Row>

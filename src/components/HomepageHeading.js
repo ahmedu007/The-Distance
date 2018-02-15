@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Container, Header, Icon } from "semantic-ui-react";
+import { Container, Header } from "semantic-ui-react";
 import "./HomepageHeading.css";
 
 const HomepageHeading = props => (

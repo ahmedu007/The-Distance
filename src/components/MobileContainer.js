@@ -11,7 +11,10 @@ import {
 import HomepageHeading from "./HomepageHeading";
 
 class MobileContainer extends Component {
-  state = {};
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
 
   handleToggle = () =>
     this.setState({ sidebarOpened: !this.state.sidebarOpened });
@@ -30,23 +33,16 @@ class MobileContainer extends Component {
             vertical
             visible={sidebarOpened}
           >
-            <Menu.Item as="a" active>
+            <Menu.Item as="a" active href="/">
               Home
             </Menu.Item>
-            <Menu.Item as="a">Work</Menu.Item>
-            <Menu.Item as="a">Company</Menu.Item>
-            <Menu.Item as="a">Careers</Menu.Item>
-            <Menu.Item as="a">Log in</Menu.Item>
+
             <Menu.Item as="a" primary>
               Sign Up
             </Menu.Item>
           </Sidebar>
 
-          <Sidebar.Pusher
-            dimmed={sidebarOpened}
-            onClick={this.handleToggle}
-            style={{ minHeight: "100vh" }}
-          >
+          <Sidebar.Pusher dimmed={sidebarOpened} style={{ minHeight: "100vh" }}>
             <Segment
               inverted
               textAlign="center"
@@ -59,10 +55,13 @@ class MobileContainer extends Component {
                     <Icon name="sidebar" />
                   </Menu.Item>
                   <Menu.Item position="right">
-                    <Button as="a" inverted>
-                      Log in
-                    </Button>
-                    <Button as="a" inverted style={{ marginLeft: "0.5em" }}>
+                    <Button
+                      as="a"
+                      inverted
+                      style={{ marginLeft: "0.5em" }}
+                      href={this.props.text.signUp}
+                    >
+                      <Icon name="signup" />
                       Sign Up
                     </Button>
                   </Menu.Item>
