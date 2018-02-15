@@ -73,7 +73,6 @@ class MobileContainer extends Component {
               </Container>
               <HomepageHeading mobile name={this.props.text.text.text} />
             </Segment>
-
             {children}
           </Sidebar.Pusher>
         </Sidebar.Pushable>
