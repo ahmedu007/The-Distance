@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import App from "./components/App";
 import EventDetails from "./components/EventDetails";
+import NotFound from "./components/NotFound";
 
 class Router extends React.Component {
   constructor(props) {
@@ -57,11 +58,13 @@ class Router extends React.Component {
             )}
           />
           <Route
+            exact
             path={`/events/:id`}
             render={props => (
               <EventDetails events={this.state.events} {...props} />
             )}
           />
+          <Route path="*" component={NotFound} />
         </Switch>
       </BrowserRouter>
     );
