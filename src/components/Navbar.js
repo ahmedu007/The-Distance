@@ -19,7 +19,7 @@ class Navbar extends Component {
   handleSubmit(event) {
     event.preventDefault();
     const pageNum = this.state.value.match(/^\d+$/);
-    if (pageNum !== null) {
+    if (pageNum !== null && pageNum <= 200) {
       this.props.getEvents(+pageNum[0]);
       this.setState({
         value: ""
