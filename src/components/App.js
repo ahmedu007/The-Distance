@@ -50,7 +50,7 @@ class App extends React.Component {
   render() {
     const { activePage } = this.props;
     return (
-      <div>
+      <div style={{ paddingBottom: "5%" }}>
         <Navbar
           fixed={true}
           button={false}
