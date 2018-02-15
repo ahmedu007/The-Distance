@@ -9,6 +9,7 @@ body {
   padding-bottom: 2rem;
   margin-bottom: 2rem;
   font-family: sans-serif;
+  background: linear-gradient(90deg, #f0f2f0, #000c40);
 }
 
 #navigation {
