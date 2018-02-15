@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, Icon, Image } from "semantic-ui-react";
 import * as moment from "moment";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const EventCard = props => {
   const location = props.event.start.timezone.split("/");
@@ -12,7 +12,7 @@ const EventCard = props => {
       style={{ textAlign: "left", minHeight: "350px" }}
       id="img-zoom-in"
     >
-      <Link to={`/events/${props.event.id}`}>
+      <NavLink to={`/events/${props.event.id}`}>
         <Image
           src={
             props.event.logo !== null
@@ -26,8 +26,8 @@ const EventCard = props => {
           style={{
             alignItems: "justify",
             overflow: "hidden",
-            textOverflow: "ellipsis",
-            whiteSpace: "nowrap"
+            textOverflow: "ellipsis"
+            // whiteSpace: "nowrap"
           }}
         >
           <Card.Header>{props.event.name.text}</Card.Header>
@@ -38,12 +38,12 @@ const EventCard = props => {
               {moment(props.event.start.local).format("DD/MM/YYYY")}
             </span>
           </Card.Meta>
-          <Card.Description>
+          <Card.Description style={{ verticalAlign: "bottom" }}>
             <Icon name="location arrow" />
             {location[1]}
           </Card.Description>
         </Card.Content>
-      </Link>
+      </NavLink>
     </Card>
   );
 };
