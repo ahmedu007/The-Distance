@@ -1,0 +1,180 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the loading state if there are no events 1`] = `
+<div>
+  <div
+    className="ui large top fixed menu"
+  >
+    <div
+      className="ui container"
+    >
+      <a
+        className="active item"
+        href="/"
+        onClick={[Function]}
+      >
+        Home
+      </a>
+      <div
+        className="right item"
+        onClick={[Function]}
+      >
+        <form
+          onSubmit={[Function]}
+        >
+          <div
+            className="ui left icon input"
+          >
+            <input
+              disabled={undefined}
+              onChange={[Function]}
+              placeholder="Go to page..."
+              tabIndex={undefined}
+              type="text"
+              value=""
+            />
+            <i
+              aria-hidden="true"
+              className="copy icon"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <br />
+  <br />
+  <br />
+  <br />
+  <div
+    className="ui container"
+    style={
+      Object {
+        "textAlign": "center",
+      }
+    }
+  >
+    <div
+      aria-label="Pagination Navigation"
+      className="ui pagination pointing secondary menu"
+      id="pagination"
+      role="navigation"
+    >
+      <a
+        aria-current={false}
+        aria-label="Previous item"
+        className="item"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
+        value={NaN}
+      >
+        ⟨
+      </a>
+      <a
+        aria-current={false}
+        aria-label={undefined}
+        className="item"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
+        value={1}
+      >
+        1
+      </a>
+      <a
+        aria-current={false}
+        aria-label={undefined}
+        className="disabled item"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={-1}
+        value={NaN}
+      >
+        ...
+      </a>
+      <a
+        aria-current={false}
+        aria-label={undefined}
+        className="disabled item"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={-1}
+        value={NaN}
+      >
+        ...
+      </a>
+      <a
+        aria-current={false}
+        aria-label={undefined}
+        className="disabled item"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={-1}
+        value={NaN}
+      >
+        ...
+      </a>
+      <a
+        aria-current={false}
+        aria-label={undefined}
+        className="item"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
+        value={20}
+      >
+        20
+      </a>
+      <a
+        aria-current={false}
+        aria-label="Next item"
+        className="item"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        tabIndex={0}
+        value={NaN}
+      >
+        ⟩
+      </a>
+    </div>
+    <div
+      id="navigation"
+    >
+      <button
+        className="ui icon disabled left labeled button"
+        disabled={true}
+        onClick={[Function]}
+        role="button"
+        tabIndex={-1}
+      >
+        <i
+          aria-hidden="true"
+          className="left arrow icon"
+        />
+        Previous
+      </button>
+      <button
+        className="ui icon disabled right labeled button"
+        disabled={true}
+        onClick={[Function]}
+        role="button"
+        tabIndex={-1}
+      >
+        <i
+          aria-hidden="true"
+          className="right arrow icon"
+        />
+        Next
+      </button>
+    </div>
+    <div
+      className="ui container"
+      id="cards"
+    >
+      <br />
+      <br />
+    </div>
+  </div>
+</div>
+`;
