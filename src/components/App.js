@@ -51,7 +51,12 @@ class App extends React.Component {
     const { activePage } = this.props;
     return (
       <div>
-        <Navbar fixed={true} button={false} getEvents={this.props.getEvents} />
+        <Navbar
+          fixed={true}
+          button={false}
+          getEvents={this.props.getEvents}
+          totalPages={this.props.pageCount}
+        />
         <br />
         <br />
         <br />
