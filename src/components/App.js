@@ -63,6 +63,7 @@ class App extends React.Component {
             activePage={activePage}
             pointing
             secondary
+            siblingRange={2}
             onPageChange={this.handleChange}
             totalPages={this.props.pageCount || 20}
             id="pagination"
