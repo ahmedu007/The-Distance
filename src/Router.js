@@ -8,12 +8,16 @@ class Router extends React.Component {
     super(props);
     this.state = {
       events: [],
-      pagination: {}
+      pagination: {},
+      loading: true
     };
     this.getEvents = this.getEvents.bind(this);
   }
 
   getEvents(page = 1) {
+    this.setState({
+      loading: true
+    });
     fetch(
       `https://www.eventbriteapi.com/v3/events/search/?token=VBUSKKCQ2VTXKPOP34PX&page=${page}`
     )
@@ -21,7 +25,8 @@ class Router extends React.Component {
       .then(res => {
         return this.setState({
           events: res.events,
-          pagination: res.pagination
+          pagination: res.pagination,
+          loading: false
         });
       })
       .catch(err => console.error(err));
@@ -41,8 +46,9 @@ class Router extends React.Component {
             render={props => (
               <App
                 events={this.state.events}
-                getEvents={this.getEvents.bind(this)}
+                getEvents={this.getEvents}
                 pageCount={this.state.pagination.page_count}
+                loading={this.state.loading}
                 {...props}
               />
             )}

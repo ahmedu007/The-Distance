@@ -3,6 +3,7 @@ import "./App.css";
 import EventCard from "./EventCard";
 import { Container, Pagination, Button } from "semantic-ui-react";
 import Navbar from "./Navbar";
+import Loading from "./Loading";
 
 class App extends React.Component {
   constructor() {
@@ -11,7 +12,8 @@ class App extends React.Component {
     this.handleBackClick = this.handleBackClick.bind(this);
     this.handleNextClick = this.handleNextClick.bind(this);
     this.state = {
-      activePage: 1
+      activePage: 1,
+      loading: true
     };
   }
 
@@ -77,13 +79,17 @@ class App extends React.Component {
               disabled={this.state.activePage < 200 ? null : true}
             />
           </div>
-          <Container id="cards">
-            <br />
-            <br />
-            {this.props.events.map((event, i) => (
-              <EventCard event={event} key={i} />
-            ))}
-          </Container>
+          {this.props.loading ? (
+            <Loading />
+          ) : (
+            <Container id="cards">
+              <br />
+              <br />
+              {this.props.events.map((event, i) => (
+                <EventCard event={event} key={i} />
+              ))}
+            </Container>
+          )}
         </Container>
       </div>
     );
