@@ -67,12 +67,14 @@ class App extends React.Component {
               icon="left arrow"
               labelPosition="left"
               onClick={this.handleBackClick}
+              disabled={this.state.activePage > 1 ? null : true}
             />
             <Button
               content="Next"
               icon="right arrow"
               labelPosition="right"
               onClick={this.handleNextClick}
+              disabled={this.state.activePage < 200 ? null : true}
             />
           </div>
           <Container id="cards">
