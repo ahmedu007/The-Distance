@@ -4,6 +4,7 @@ import MobileContainer from "./MobileContainer";
 import DesktopContainer from "./DesktopContainer";
 import * as moment from "moment";
 import locationImg from "./images/google-location-icon-location.png";
+import Footer from "./Footer";
 
 const ResponsiveContainer = props => (
   <div>
@@ -152,6 +153,7 @@ class EventDetails extends Component {
           </Grid>
         </Segment>
         <Segment style={{ padding: "8em 0em" }} vertical />
+        <Footer />
       </ResponsiveContainer>
     );
   }
