@@ -22,6 +22,10 @@ class App extends React.Component {
     this.setState({ activePage: this.props.activePage });
   }
 
+  componentDidUpdate(nextProps) {
+    window.scrollTo(0, 0);
+  }
+
   handleChange(event, { activePage }) {
     event.preventDefault();
     this.setState({
