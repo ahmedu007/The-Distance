@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Grid, Segment, List, Container, Header } from "semantic-ui-react";
 
 const Footer = props => (

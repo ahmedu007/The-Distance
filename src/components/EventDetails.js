@@ -1,14 +1,5 @@
 import React, { Component } from "react";
-import {
-  Icon,
-  Button,
-  Container,
-  Grid,
-  Header,
-  Image,
-  List,
-  Segment
-} from "semantic-ui-react";
+import { Icon, Button, Grid, Header, Image, Segment } from "semantic-ui-react";
 import MobileContainer from "./MobileContainer";
 import DesktopContainer from "./DesktopContainer";
 import * as moment from "moment";
