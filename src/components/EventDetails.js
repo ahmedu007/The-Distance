@@ -57,6 +57,10 @@ class EventDetails extends Component {
     this.getEventDetails();
   }
 
+  componentDidUpdate(prevProps) {
+    window.scrollTo(0, 0);
+  }
+
   render() {
     const location = this.state.event.start.timezone.split("/");
     return (
