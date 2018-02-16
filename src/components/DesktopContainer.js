@@ -6,12 +6,12 @@ import Navbar from "./Navbar";
 class DesktopContainer extends Component {
   state = {};
 
-  hideFixedMenu = () => this.setState({ fixed: false });
-  showFixedMenu = () => this.setState({ fixed: true });
+  hideFixedMenu = () => this.setState({ fixed: false, inverted: false });
+  showFixedMenu = () => this.setState({ fixed: true, inverted: true });
 
   render() {
     const { children, signUp } = this.props.text;
-    const { fixed } = this.state;
+    const { fixed, inverted } = this.state;
 
     return (
       <Responsive {...Responsive.onlyComputer}>
@@ -26,7 +26,12 @@ class DesktopContainer extends Component {
             style={{ minHeight: 300, padding: "1em 0em" }}
             vertical
           >
-            <Navbar fixed={fixed} button={true} signUp={signUp} />
+            <Navbar
+              fixed={fixed}
+              button={true}
+              signUp={signUp}
+              inverted={inverted}
+            />
             <HomepageHeading name={this.props.text.text.text} />
           </Segment>
         </Visibility>

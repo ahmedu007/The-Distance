@@ -28,11 +28,11 @@ class Navbar extends Component {
   }
 
   render() {
-    const { fixed } = this.props;
+    const { fixed, inverted } = this.props;
     return (
       <Menu
         fixed={fixed ? "top" : null}
-        inverted={!fixed}
+        inverted={!inverted}
         pointing={!fixed}
         secondary={!fixed}
         size="large"
@@ -45,7 +45,7 @@ class Navbar extends Component {
             <Menu.Item position="right">
               <Button
                 as="a"
-                inverted={!fixed}
+                inverted={!inverted}
                 primary={fixed}
                 style={{ marginLeft: "0.5em" }}
                 href={this.props.signUp}
