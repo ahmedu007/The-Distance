@@ -4,6 +4,7 @@ import EventCard from "./EventCard";
 import { Container, Pagination, Button } from "semantic-ui-react";
 import Navbar from "./Navbar";
 import Loading from "./Loading";
+import Footer from "./Footer";
 
 class App extends React.Component {
   constructor() {
@@ -50,7 +51,7 @@ class App extends React.Component {
   render() {
     const { activePage } = this.props;
     return (
-      <div style={{ paddingBottom: "5%" }}>
+      <div>
         <Navbar
           fixed={true}
           button={false}
@@ -92,7 +93,7 @@ class App extends React.Component {
           {this.props.loading ? (
             <Loading />
           ) : (
-            <Container id="cards">
+            <Container id="cards" style={{ paddingBottom: "5%" }}>
               <br />
               <br />
               {this.props.events.map((event, i) => (
@@ -101,6 +102,7 @@ class App extends React.Component {
             </Container>
           )}
         </Container>
+        <Footer />
       </div>
     );
   }
